@@ -16,7 +16,7 @@ func HideCursor() {
 
 // Fullscreen checks if the current window has the WINDOW_FULLSCREEN
 // or WINDOW_FULLSCREEN_DESKTOP flag set.
-func Fullscreen(window *sdl.Window) bool {
+func IsFullscreen(window *sdl.Window) bool {
 	flags := window.GetFlags()
 	window_fullscreen := (flags & sdl.WINDOW_FULLSCREEN) != 0
 	window_fullscreen_desktop := (flags & sdl.WINDOW_FULLSCREEN_DESKTOP) != 0
@@ -27,16 +27,16 @@ func Fullscreen(window *sdl.Window) bool {
 // Returns true if the mode has been switched to fullscreen.
 // Also toggles the visibility of the mouse cursor.
 func ToggleFullscreen(window *sdl.Window) bool {
-	if !Fullscreen(window) {
+	if !IsFullscreen(window) {
 		// Switch to fullscreen mode
 		window.SetFullscreen(sdl.WINDOW_FULLSCREEN_DESKTOP)
 		HideCursor()
 		// Return the new fullscreen status
-		return Fullscreen(window)
+		return IsFullscreen(window)
 	}
 	// Switch to windowed mode
 	window.SetFullscreen(sdl.WINDOW_SHOWN)
 	ShowCursor()
 	// Return the new fullscreen status
-	return Fullscreen(window)
+	return IsFullscreen(window)
 }
