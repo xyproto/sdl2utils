@@ -32,11 +32,13 @@ func ToggleFullscreen(window *sdl.Window) bool {
 		window.SetFullscreen(sdl.WINDOW_FULLSCREEN_DESKTOP)
 		HideCursor()
 		// Return the new fullscreen status
-		return IsFullscreen(window)
+		return true
+		// Returning IsFullscreen(window) is also possible, but unreliable, since it takes a while for the window status to change
 	}
 	// Switch to windowed mode
 	window.SetFullscreen(sdl.WINDOW_SHOWN)
 	ShowCursor()
 	// Return the new fullscreen status
-	return IsFullscreen(window)
+	return false
+	// Returning IsFullscreen(window) is also possible, but unreliable, since it takes a while for the window status to change
 }
