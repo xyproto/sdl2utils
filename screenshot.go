@@ -16,7 +16,7 @@ func RendererToImage(renderer *sdl.Renderer) (*image.RGBA, error) {
 
 	rect := &sdl.Rect{0, 0, w, h}
 	format := uint32(sdl.PIXELFORMAT_ARGB8888)
-	pitch := uint32(w)
+	pitch := int32(w)
 	pixelBuffer := make([]uint32, w*h)
 	pixelBufferPointer := unsafe.Pointer(&pixelBuffer[0])
 
