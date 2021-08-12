@@ -2,7 +2,7 @@ package sdl2utils
 
 import (
 	"github.com/veandco/go-sdl2/sdl"
-	"github.com/xyproto/multirender"
+	"github.com/xyproto/pixelpusher"
 	"image"
 	"unsafe"
 )
