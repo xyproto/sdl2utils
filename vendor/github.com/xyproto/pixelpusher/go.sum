@@ -8,10 +8,11 @@ github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646/go.mod h1:jpp1/29i3P1S
 github.com/veandco/go-sdl2 v0.4.0/go.mod h1:FB+kTpX9YTE+urhYiClnRzpOXbiWgaU3+5F2AB78DPg=
 github.com/veandco/go-sdl2 v0.4.8 h1:A26KeX6R1CGt/BQGEov6oxYmVGMMEWDVqTvK1tXvahE=
 github.com/veandco/go-sdl2 v0.4.8/go.mod h1:OROqMhHD43nT4/i9crJukyVecjPNYYuCofep6SNiAjY=
-github.com/xyproto/multirender v0.0.0-20210812160008-b09d0e851269 h1:tNevfpZFVO8mpfUvapt2NIP8Js/15jBw6HZ8p5WQPb4=
 github.com/xyproto/multirender v0.0.0-20210812160008-b09d0e851269/go.mod h1:NuGNCBuS6hYRp8HNgzPLELdT4X8n0N3jGcE6MwZfp9E=
 github.com/xyproto/pf v0.0.0-20181025124322-7074da227fa9/go.mod h1:gFY4ElmPdzIugLXkqXbHZ/5YPyMrApUTDXawHCj9KBI=
 github.com/xyproto/pf v0.1.0 h1:eRNs6hP2WyPWmf/XLM5GfWm5sEiKzSg0B8wXlN8Rl9I=
 github.com/xyproto/pf v0.1.0/go.mod h1:rtltCHXE42yF2p802kl3h6ILFdjrGAe+SCmKHFlBl9M=
-github.com/xyproto/sdl2utils v0.0.0-20180825143422-1d41a661b4cb h1:KxAQtJk6dsWITscEKXKrEO+cGZ3WqQgSNCYYxCmOWtA=
+github.com/xyproto/pixelpusher v0.0.0-20210812161021-2b0152ae3a90/go.mod h1:0AhWORbB8lGJlDaqQz1RmDmBnk32buv0CsUlKiNrFFI=
 github.com/xyproto/sdl2utils v0.0.0-20180825143422-1d41a661b4cb/go.mod h1:/SEUe3Ed5TBJ6kjWqEob0E49WFaAykUUx3WrlIEbl0g=
+github.com/xyproto/sdl2utils v0.0.2 h1:NVVSR+g69e5052lJa5gtijWym0WG+gt3SlhgmcRJm6Q=
+github.com/xyproto/sdl2utils v0.0.2/go.mod h1:Ht8y1WLQ3Y9peiQ9jsRvP0qdS5R6iYlvD0/SxMMfoqw=

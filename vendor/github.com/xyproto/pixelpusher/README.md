@@ -1,17 +1,17 @@
 # pixelpusher
 
-[![Build Status](https://travis-ci.com/xyproto/pixelpusher.svg?branch=master)](https://travis-ci.com/xyproto/pixelpusher)
+![Build](https://github.com/xyproto/pixelpusher/workflows/Build/badge.svg)
 [![GoDoc](https://godoc.org/github.com/xyproto/pixelpusher?status.svg)](http://godoc.org/github.com/xyproto/pixelpusher)
-[![License](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://raw.githubusercontent.com/xyproto/pixelpusher/master/LICENSE)
+[![License](https://img.shields.io/badge/license-BSD-green.svg?style=flat)](https://raw.githubusercontent.com/xyproto/o/main/LICENSE)
 [![Go Report Card](https://goreportcard.com/badge/github.com/xyproto/pixelpusher)](https://goreportcard.com/report/github.com/xyproto/pixelpusher)
 
 Fast concurrent software rendering, triangle rasterization and pixel buffer manipulation.
 
 ![screencap](img/screencap.gif) ![triangles](img/triangles.png)
 
-![butterflies](img/butterfly.png) ![glitch effect](img/trippy.png)
+![butterflies](img/butterfly.png) ![glitch effect](img/strobe.png)
 
-![software rendered duck](img/duck.png) ![software rendered duck with glitch effect](img/glitch.png)
+![software rendered duck with glitch effect](img/glitch.png) ![software rendered beveled cube](img/cube.png)
 
 
 ## Features and limitations
@@ -62,32 +62,22 @@ const (
     opaque = 255
 )
 
-// rb returns a random byte
-func rb() uint8 {
-    return uint8(rand.Intn(255))
-}
-
-// rw returns a random int32 in the range [0,width)
-func rw() int32 {
-    return rand.Int31n(width)
-}
-
-// rh returns a random int32 in the range [0,height)
-func rh() int32 {
-    return rand.Int31n(height)
-}
-
 // DrawAll fills the pixel buffer with pixels.
 // "cores" is how many CPU cores should be targeted when drawing triangles,
 // by launching the same number of goroutines.
 func DrawAll(pixels []uint32, cores int) {
+
+    // Convenience functions for returning random numbers
+    rw := func() int32 { return rand.Int31n(width) }
+    rh := func() int32 { return rand.Int31n(height) }
+    rb := func() uint8 { return uint8(rand.Intn(255)) }
 
     // Draw a triangle, concurrently
     pixelpusher.Triangle(cores, pixels, rw(), rh(), rw(), rh(), rw(), rh(), color.RGBA{rb(), rb(), rb(), opaque}, pitch)
 
     // Draw a line and a red pixel, without caring about which order they appear in, or if they will complete before the next frame is drawn
     go pixelpusher.Line(pixels, rw(), rh(), rw(), rh(), color.RGBA{0xff, 0xff, 0, opaque}, pitch)
-    go pixelpusher.Pixel(pixels, rw(), rh(), color.RGBA{0xff, 0xff, 0xff, opaque}, pitch)
+    go pixelpusher.Pixel(pixels, rw(), rh(), color.RGBA{0xff, 0x0, 0x0, opaque}, pitch)
 }
 
 func run() int {
@@ -206,6 +196,6 @@ func main() {
 
 # General information
 
-* License: BSD
-* Version: 0.1.0
+* Version: 1.0.0
+* License: 3-clause BSD
 * Author: Alexander F. Rødseth &lt;rodseth@gmail.com&gt;

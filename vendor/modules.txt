@@ -1,8 +1,9 @@
-# github.com/veandco/go-sdl2 v0.4.8
+# github.com/veandco/go-sdl2 v0.4.36
 ## explicit
+github.com/veandco/go-sdl2/_libs
 github.com/veandco/go-sdl2/sdl
 # github.com/xyproto/pf v0.1.0
 github.com/xyproto/pf
-# github.com/xyproto/pixelpusher v0.0.0-20210812161021-2b0152ae3a90
+# github.com/xyproto/pixelpusher v1.0.0
 ## explicit
 github.com/xyproto/pixelpusher
